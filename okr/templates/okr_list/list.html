@@ -1,0 +1,22 @@
+
+{% extends 'base/base.html' %}
+
+{% block title %}
+Lista de Okrs
+{% endblock title %}
+
+{% block content %}
+        <table class="table">
+          <thead class="thead-light">
+              <tr>
+                  <th scope="col">Lista de Okrs</th>
+              </tr>
+                  {% for okr in okrs %}
+                    <tr>
+                        <td scope="row"><a href="/okr/{{okr.id}}/">Okr: {{ okr.integrante }}</a></td>
+                    </tr>
+                  {% endfor%}
+          </thead>
+        </table>
+        <a href="{% url 'okr_register' %}"><bottom type="submit" class="btn btn-primary" name="Registrar">Página de registro</bottom></a>
+{% endblock content %}
