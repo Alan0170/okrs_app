@@ -12,7 +12,10 @@ def okr_register(request):
             form.save()
             return redirect('okr_list')
     form = OkrForm()
-    return render(request, 'okr_register/register.html', {'form': form})
+    context = {
+        'form': form
+    }
+    return render(request, 'okr_register/register.html', context)
 
 
 def okr_list(request):

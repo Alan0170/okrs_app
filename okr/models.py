@@ -17,12 +17,8 @@ class Okr(models.Model):
     resultado_3 = models.CharField(max_length=255, blank=True)
     resultado_4 = models.CharField(max_length=255, blank=True)
     resultado_5 = models.CharField(max_length=255, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    update_at = models.DateTimeField(auto_now=True)
+    criado = models.DateTimeField(auto_now_add=True)
+    atualizado = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'Okr: {self.integrante}'
-
-
-
-

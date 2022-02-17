@@ -7,42 +7,43 @@ Lista de Okrs
 {% endblock title %}
 
 {% block content %}
-    <div class="p-3 mb-2 bg-light text-dark">
-            <h1><p class="text-light bg-dark">Cadastro de OKRs</p></h1>
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group col-md-3">
-                <label>Nome do integrante</label>
-                {% render_field form.integrante class+="form-group" %}
-            </div>
-            <div class="form-group col-md-3">
-                <label>Objetivo</label>
-                {% render_field
-                class+="form-control" %}
-            </div>
-            <div class="form-group col-md-4">
-                <label>Resultado 1</label>
-                {% render_field form.resultado_1 class+="form-control" %}
-            </div>
-                <div class="form-group col-md-4">
-                    <label>Resultado 2</label>
-                {% render_field form.resultado_2 class+="form-control" %}
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Resultado 3</label>
-                    {% render_field form.resultado_3 class+="form-control" %}
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Resultado 4</label>
-                    {% render_field form.resultado_4 class+="form-control" %}
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Resultado 5</label>
-                    {% render_field form.resultado_5 class+="form-control" %}
-                </div>
-                <div>
-                    <a href="{% url 'okr_register' %}"><button type="submit" class="btn btn-primary" name="Registrar">Registrar</button></a>
-                </div>
-        </form>
-    </div>
+<div class="p-3 mb-2 bg-light text-dark">
+    <h1><p class="text-light bg-dark">Cadastro de OKRs</p></h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group col-md-3">
+            <label>Nome do integrante</label>
+            {% render_field form.integrante class+="form-group" %}
+        </div>
+        <div class="form-group col-md-3">
+            <label>Objetivo</label>
+            {% render_field form.objetivo class+="form-control" %}
+        </div>
+        <div class="form-group col-md-4">
+            <label>Resultado 1</label>
+            {% render_field form.resultado_1 class+="form-control" %}
+        </div>
+        <div class="form-group col-md-4">
+            <label>Resultado 2</label>
+            {% render_field form.resultado_2 class+="form-control" %}
+        </div>
+        <div class="form-group col-md-4">
+            <label>Resultado 3</label>
+            {% render_field form.resultado_3 class+="form-control" %}
+        </div>
+        <div class="form-group col-md-4">
+            <label>Resultado 4</label>
+            {% render_field form.resultado_4 class+="form-control" %}
+        </div>
+        <div class="form-group col-md-4">
+            <label>Resultado 5</label>
+            {% render_field form.resultado_5 class+="form-control" %}
+        </div>
+        <div>
+            <a href="{% url 'okr_register' %}">
+                <button type="submit" class="btn btn-primary" name="Registrar">Registrar</button>
+            </a>
+        </div>
+    </form>
+</div>
 {% endblock content %}
