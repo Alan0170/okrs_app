@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$u2-4ae!he7@_0fqzg)ckj1rd0m!ps^5pdw$@5(tv@m$015qbz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'okr.apps.OkrRegisterConfig',
     'widget_tweaks',
+    'rest',
+    'rest_framework',
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [

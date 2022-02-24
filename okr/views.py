@@ -6,14 +6,18 @@ from .forms import OkrForm
 
 
 def okr_register(request):
+    messages = None
     if request.method == 'POST':
         form = OkrForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('okr_list')
+        else:
+            messages = 'Dados inválidos favor fazer uma chamada correta!'
     form = OkrForm()
     context = {
-        'form': form
+        'form': form,
+        'messages': messages
     }
     return render(request, 'okr_register/register.html', context)
 
