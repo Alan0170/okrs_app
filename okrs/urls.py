@@ -15,8 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework.routers import DefaultRouter
+
+from okr.api.views.integrante_view import IntegranteViewSet
+from okr.api.views.okr_api_view import OkrViewSet
+
+router = DefaultRouter()
+router.register(r'okr_api', OkrViewSet)
+router.register(r'okr_integrantes', IntegranteViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('okr.urls'))
-]
+    path('', include('okr.urls')),
+    path('', include(router.urls)),
+    path('api-token-auth/', obtain_auth_token),
+    path('api-auth/', include('rest_framework.urls')),
+
+ ]
+# urlpatterns += [
+#     path('api-auth/', include('rest_framework.urls')),
+# ]
