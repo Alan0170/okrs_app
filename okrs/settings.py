@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'okr.apps.OkrRegisterConfig',
     'widget_tweaks',
-    'rest',
     'rest_framework',
     'oauth2_provider',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
